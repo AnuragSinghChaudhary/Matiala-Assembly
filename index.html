@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Matiala Assembly Constituency</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+
+
+
+    <link 
+        rel="stylesheet" 
+        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+    />
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+	
+
+
+</head>
+<body>
+
+
+
+<div id="mapid" style="width: 1280px; height: 600px;"></div>
+<script>
+
+
+
+
+     
+
+
+	var mymap = L.map('mapid').setView([28.6085293,77.0508414], 14);
+
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+
+
+
+
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(mymap);
+
+	
+
+
+    var popup = L.popup();
+
+	//L.circle([28.614891030607932,77.05278396606445], 500, {
+	//	color: 'red',
+	//	fillColor: '#f03',
+	//	fillOpacity: 0.5
+	//}).addTo(mymap).bindPopup("Polling Booth");
+
+	var greenIcon = L.icon({
+    iconUrl: 'marker.svg',
+
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [16, 95], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
+});
+	var blackIcon = L.icon({
+    iconUrl: 'marker_black.svg',
+
+    iconSize:     [38, 95], // size of the icon
+    iconAnchor:   [16, 95], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -50] // point from which the popup should open relative to the iconAnchor
+});
+
+
+
+
+
+    L.marker([28.6418361,77.0429449], {icon: greenIcon}).addTo(mymap).bindPopup("Polling Booth");
+    
+
+
+    //var geojson = {"type": "FeatureCollection","features": [{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.02377319335936,28.60969194496244]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.0316696166992,28.588893029339193]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.07767486572266,28.60291014217668]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.07063674926758,28.587837902192682]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.0170783996582,28.57834128141378]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.00626373291016,28.59974515106758]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.01639175415039,28.61752814958291]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.02806472778319,28.623555601414964]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.04059600830078,28.627021229534375]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.05450057983398,28.62310355452992]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.04093933105469,28.615418459700606]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.04505920410156,28.600498729025663]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.04814910888672,28.610294750689928]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.03372955322266,28.60712998202913]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.02394485473633,28.59567573671796]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.04711914062499,28.58859156552069]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.05638885498047,28.595223569841732]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.07235336303711,28.617980220472187]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.08419799804688,28.626267841849668]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.06583023071289,28.6306374151518]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.00077056884764,28.616021232563092]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.05535888671874,28.583165068981423]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.06926345825195,28.609089135775704]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.05741882324219,28.615719846564314]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.03733444213867,28.598237978940002]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.03956604003905,28.581356174571]}},{"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": [77.0668601989746,28.602307294076848]}}]};
+
+    var geojson = {
+"type": "FeatureCollection",
+"name": "PollBooths",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS:84" } },
+"features": [
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sukhi Ram Park Matiala Village", "Latitude": 28.6146144, "Longitude": 77.0442413 }, "geometry": { "type": "Point", "coordinates": [ 77.0442413, 28.6146144 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A - Block Sainik Nagar Uttam Nagar", "Latitude": 28.6418361, "Longitude": 77.0429449 }, "geometry": { "type": "Point", "coordinates": [ 77.0429449, 28.6418361 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C - Block Sainik Nagar Uttam Nagar", "Latitude": 28.6167882, "Longitude": 77.0409315 }, "geometry": { "type": "Point", "coordinates": [ 77.0409315, 28.6167882 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " B Block Mansa Ram Park Uttam Nagar", "Latitude": 28.6170177, "Longitude": 77.0431335 }, "geometry": { "type": "Point", "coordinates": [ 77.0431335, 28.6170177 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C Block Mansa Ram Park Uttam Nagar", "Latitude": 28.6167882, "Longitude": 77.0409315 }, "geometry": { "type": "Point", "coordinates": [ 77.0409315, 28.6167882 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E Block Mansa Ram Park Uttam Nagar", "Latitude": 28.6156931, "Longitude": 77.0396252 }, "geometry": { "type": "Point", "coordinates": [ 77.0396252, 28.6156931 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D Block Mansa Ram ParkUttam Nagar", "Latitude": 28.6183563, "Longitude": 77.0384557 }, "geometry": { "type": "Point", "coordinates": [ 77.0384557, 28.6183563 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D Block Mansa Ram Park Uttam Nagar", "Latitude": 28.6183563, "Longitude": 77.0384557 }, "geometry": { "type": "Point", "coordinates": [ 77.0384557, 28.6183563 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sri Chand Park , A Block Matiala", "Latitude": 28.6126255, "Longitude": 77.0410896 }, "geometry": { "type": "Point", "coordinates": [ 77.0410896, 28.6126255 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Matiala Extn Matiala Village", "Latitude": 28.6104544, "Longitude": 77.0456523 }, "geometry": { "type": "Point", "coordinates": [ 77.0456523, 28.6104544 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Matiala Ext Behind MCD School Matiala Village", "Latitude": 28.6123634, "Longitude": 77.0470015 }, "geometry": { "type": "Point", "coordinates": [ 77.0470015, 28.6123634 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A Block Nanhey Park Matiala", "Latitude": 28.6144872, "Longitude": 77.0492421 }, "geometry": { "type": "Point", "coordinates": [ 77.0492421, 28.6144872 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nanhey Park C Block Matiala", "Latitude": 28.6131771, "Longitude": 77.0502261 }, "geometry": { "type": "Point", "coordinates": [ 77.0502261, 28.6131771 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nanhey Park D  Block, Matiala", "Latitude": 28.6131771, "Longitude": 77.0502261 }, "geometry": { "type": "Point", "coordinates": [ 77.0502261, 28.6131771 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nanhey Park , E - Block, Matiala", "Latitude": 28.6131771, "Longitude": 77.0502261 }, "geometry": { "type": "Point", "coordinates": [ 77.0502261, 28.6131771 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A Block Mansa Ram Park, Uttam Nagar", "Latitude": 28.6181674, "Longitude": 77.0392992 }, "geometry": { "type": "Point", "coordinates": [ 77.0392992, 28.6181674 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " New T - Block Nanhe Park, Matiala", "Latitude": 28.6134403, "Longitude": 77.0511466 }, "geometry": { "type": "Point", "coordinates": [ 77.0511466, 28.6134403 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " New T - Block Nanhe Park, Matiala", "Latitude": 28.6134403, "Longitude": 77.0511466 }, "geometry": { "type": "Point", "coordinates": [ 77.0511466, 28.6134403 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " New T Block Nanhey Park, Matiala", "Latitude": 28.6164893, "Longitude": 77.0524887 }, "geometry": { "type": "Point", "coordinates": [ 77.0524887, 28.6164893 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A - Block Jain Park, Matiala", "Latitude": 28.6144872, "Longitude": 77.0492421 }, "geometry": { "type": "Point", "coordinates": [ 77.0492421, 28.6144872 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " B - Block Jain Park, Matiala", "Latitude": 28.6136562, "Longitude": 77.0472715 }, "geometry": { "type": "Point", "coordinates": [ 77.0472715, 28.6136562 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Jain Colony Part-1", "Latitude": 28.6135757, "Longitude": 77.0533038 }, "geometry": { "type": "Point", "coordinates": [ 77.0533038, 28.6135757 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Jain Colony Part-1, Matiala", "Latitude": 28.6135757, "Longitude": 77.0533038 }, "geometry": { "type": "Point", "coordinates": [ 77.0533038, 28.6135757 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Jain Colony Part-III, Matiala", "Latitude": 28.6141409, "Longitude": 77.0520501 }, "geometry": { "type": "Point", "coordinates": [ 77.0520501, 28.6141409 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Jain Colony Part-II, Matiala", "Latitude": 28.6113848, "Longitude": 77.0543555 }, "geometry": { "type": "Point", "coordinates": [ 77.0543555, 28.6113848 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " R Z Block Jain Colony Part-III, Matiala", "Latitude": 28.6111017, "Longitude": 77.0525959 }, "geometry": { "type": "Point", "coordinates": [ 77.0525959, 28.6111017 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A - Block Om Vihar Extn, Uttam Nagar", "Latitude": 28.6196544, "Longitude": 77.0486171 }, "geometry": { "type": "Point", "coordinates": [ 77.0486171, 28.6196544 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Khusi Ram Park Om Vihar Extn., Uttam Nagar", "Latitude": 28.6169397, "Longitude": 77.0515892 }, "geometry": { "type": "Point", "coordinates": [ 77.0515892, 28.6169397 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E Block Om Vihar Extn, Uttam Nagar", "Latitude": 28.6183272, "Longitude": 77.0506903 }, "geometry": { "type": "Point", "coordinates": [ 77.0506903, 28.6183272 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E Block Om Vihar Extn, Uttam Nagar", "Latitude": 28.6183272, "Longitude": 77.0590903 }, "geometry": { "type": "Point", "coordinates": [ 77.0590903, 28.6183272 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Solanki Road Vishwas Park, Uttam Nagar", "Latitude": 28.6113319, "Longitude": 77.0543584 }, "geometry": { "type": "Point", "coordinates": [ 77.0543584, 28.6113319 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A - Block Sahyog Vihar, Matiala", "Latitude": 28.6090434, "Longitude": 77.0522196 }, "geometry": { "type": "Point", "coordinates": [ 77.0522196, 28.6090434 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C - Block Sahyog Vihar, Matiala", "Latitude": 28.6085293, "Longitude": 77.0508414 }, "geometry": { "type": "Point", "coordinates": [ 77.0508414, 28.6085293 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E - Block Sahyog Vihar, Matiala", "Latitude": 28.6090443, "Longitude": 77.0785222 }, "geometry": { "type": "Point", "coordinates": [ 77.0785222, 28.6090443 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Block A, J J Colony Ph-I, Sector 3, Dwarka", "Latitude": 28.6074491, "Longitude": 77.0464213 }, "geometry": { "type": "Point", "coordinates": [ 77.0464213, 28.6074491 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Block-C, J J Colony, Ph-I, Sector-3, Dwarka", "Latitude": 28.6074491, "Longitude": 77.0464213 }, "geometry": { "type": "Point", "coordinates": [ 77.0464213, 28.6074491 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Block-D, J J Colony, Ph-I, Sector-3, Dwarka", "Latitude": 28.6074491, "Longitude": 77.0464213 }, "geometry": { "type": "Point", "coordinates": [ 77.0464213, 28.6074491 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector -3, J J Colony , Phase -2 , Dwarka", "Latitude": 28.5921401, "Longitude": 77.0460481 }, "geometry": { "type": "Point", "coordinates": [ 77.0460481, 28.5921401 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector -3, J J Colony , Ph -3 , Dwarka", "Latitude": 28.6123128, "Longitude": 77.0209516 }, "geometry": { "type": "Point", "coordinates": [ 77.0209516, 28.6123128 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector - 3 , D D A Pocket - 1 & 2, Dwarka", "Latitude": 28.5996874, "Longitude": 77.0662681 }, "geometry": { "type": "Point", "coordinates": [ 77.0662681, 28.5996874 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kairali Apptt, Dwarka Plot -10 Sector - 3", "Latitude": 28.6078176, "Longitude": 77.0406147 }, "geometry": { "type": "Point", "coordinates": [ 77.0406147, 28.6078176 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Prodyogiki Apptt, Dwarka Plot No 11 Sector 3, ", "Latitude": 28.6042389, "Longitude": 77.0400398 }, "geometry": { "type": "Point", "coordinates": [ 77.0400398, 28.6042389 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Heritege Tower , Dwarka Plot No-1 Sector-3", "Latitude": 28.6040281, "Longitude": 77.0440331 }, "geometry": { "type": "Point", "coordinates": [ 77.0440331, 28.6040281 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pocket-16 Sector-3 , Dwarka", "Latitude": 28.5949875, "Longitude": 77.0622475 }, "geometry": { "type": "Point", "coordinates": [ 77.0622475, 28.5949875 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kailash Apptt , ., Dwarka Plot No-2, Sector-4, 2 - Akriti Apptt . , Dwarka Plot No-6, Scetor-4, 3 - Din Apptt ., Dwarka Plot No-7, Scetor-4", "Latitude": 28.5928446, "Longitude": 77.0636419 }, "geometry": { "type": "Point", "coordinates": [ 77.0636419, 28.5928446 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " South Delhi Apptt., Plot No-8, Scetor-4 , Dwarka, 2 - I E S Apptt, Dwarka Plot No-9, Scetor-4, 3 - Pushpanjali Apptt , Dwarkaplot No-10, Scetor-4", "Latitude": 28.4816551, "Longitude": 77.1872857 }, "geometry": { "type": "Point", "coordinates": [ 77.1872857, 28.4816551 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Om Satyam Apptt ., Dwarka Plot No-13, Scetor-4, 2 - Hum Sub Apptt ., Dwarka Plot No-14, Scetor-4, 3 - D P S Apptt , Dwarka Plot No-16, Scetor-4, 4 - Aishwarya M Apptt , Dwarka Plot No-17 , Scetor-4, 5 - Sarve Satyam, Cghs Ltd., Dwarka Plot No 12 Sector 4, 6 - Overseas Elector, 7 - Sanchar Vihar Cghs Ltd, Plot No 15 Sector-4 Dwarka", "Latitude": 28.6044817, "Longitude": 77.0496803 }, "geometry": { "type": "Point", "coordinates": [ 77.0496803, 28.6044817 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shri Badrinath Apptt ., Dwarkaplot No-18 , Scetor-4, 2 - Ispatika Appt , Dwarka Plot No-29 , Scetor-4, 3 - Ratnakar Apptt., Dwarka Plot No-21 Sector 4, 4 - Nilanchal Appartment , Dwarka Plot No-3 , Scetor-4", "Latitude": 28.6027326, "Longitude": 77.0449331 }, "geometry": { "type": "Point", "coordinates": [ 77.0449331, 28.6027326 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Dakshinayan Apptt, Dwarka Plot No-19 , Sector-4, 2 - Sanghmitra Apptt , Dwarka Plot No-20 , Sector-4", "Latitude": 28.5438004, "Longitude": 77.0514577 }, "geometry": { "type": "Point", "coordinates": [ 77.0514577, 28.5438004 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Bank Apptt . , Dwarka Plot No-22 , Sector-4, 2 - Panchsheel Apptt, Dwarka Plot No-24 , Sector-4, 3 - New Jyoti Apptt , Dwarka Plot No-27 , Sector-4", "Latitude": 28.5998897, "Longitude": 77.0470172 }, "geometry": { "type": "Point", "coordinates": [ 77.0470172, 28.5998897 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " United Apptt , Dwarka Plot No-34, Sector -4, 2 - Green Heaven Apptt , Dwarka Plot No-35, Sector -4, 3 - Antriksh Appt., Dwarka Plot No26 Sector -4", "Latitude": 30.7261629, "Longitude": 76.7596221 }, "geometry": { "type": "Point", "coordinates": [ 76.7596221, 30.7261629 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Rajasthan Apptt., Dwarka Plot No-36 , Sector -4, 2 - Harmony Apptt., Dwarka D D A S F S Flats Pocket1 Sector 4, 3 - Patel Appt , Dwarka Plot No-4 Sector -4, 4 - Harmony Apptt., Dwarka DDA SFS Pocket 1 Sector 4", "Latitude": 27.0238036, "Longitude": 74.2179326 }, "geometry": { "type": "Point", "coordinates": [ 74.2179326, 27.0238036 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Parijat Apptt , Dwarka Plot No 28 Sector 4, 2 - Bahawalpur Appt, Dwarka Plot No-1, Sector -4", "Latitude": 28.6052303, "Longitude": 77.5605539 }, "geometry": { "type": "Point", "coordinates": [ 77.5605539, 28.6052303 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " New Jai Bharat Appt, Dwarka Plot No-5, Sector -4, 2 - P N B Appt, Dwarka Plot No-11, Sector -4, 3 - Chanakya Appt, Dwarka Plot No-23, Sector -4, 4 - Anant Appt, Dwarka Plot No-25A , Sector -4, 5 - Shree New Anamika C.G.H.S. Ltd., Plot No.-25B, Sec-4, Dwarka", "Latitude": 28.5921401, "Longitude": 77.0460481 }, "geometry": { "type": "Point", "coordinates": [ 77.0460481, 28.5921401 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Gani Nath Nikunj, Dwarka Plot No-1, Sector-5, 2 - Vivekanand Apptt., Dwarka Plot No-2, Sector -5, 3 - The Ssc Cghs Ltd, Plot No-3, Sector -5 Dwarka, 4 - DDA Pkt-1 , Sector -5 , Dwarka, 5 - Management Appt., Dwarka , Plot 17 Sector -5", "Latitude": 28.5974347, "Longitude": 77.0513838 }, "geometry": { "type": "Point", "coordinates": [ 77.0513838, 28.5974347 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Lovely Home Appartment , Dwarka , Plot No 5 Sector -5, 2 - Mother'S Appartment, Dwarka Plot No6 Sector -5, 3 - Himanchal Apptt., Dwarka Plot No-21, Sector -5, 4 - New Priyadarshni Appartment, Dwarka , Plot No 19 Sector -5, 5 - Eden Tower, Dwarka Plot-20, Sector-5, 6 - The Jhelum Arovansh C.G.H.S.Ltd, Plot No-8 Sec-5 Dwarka", "Latitude": 28.5999999, "Longitude": 77.0539263 }, "geometry": { "type": "Point", "coordinates": [ 77.0539263, 28.5999999 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Naveen Appartment, Dwarka, Plot No-13 Sector -5, 2 - Hind Appartment, Dwarka , Plot No-12 Sector -5, 3 - Jdm Appartment , Dwarka , Plot No-11 Sector -5, 4 - Shree Krishna Appartment, Dwarka , Plot No-10 Sector -5, 5 - Palam Appartment, Dwarka , Plot No-7 Sector -5, 6 - Jawahar Lal C G H S Ltd, Dwarka , Plot-9 Sector -5", "Latitude": 28.6015135, "Longitude": 77.0580209 }, "geometry": { "type": "Point", "coordinates": [ 77.0580209, 28.6015135 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Dhaula Dhar Apptment, Dwarka Plot No 15 Sector -5, 2 - Apoorva Appartment, Dwarka Plotno 14 Sector -5, 3 - Jai Maa Appartment, Dwarka Plot No-16 Sector -5, 4 - Shakti Appartment, Dwarka Plot No-18 Sector -5", "Latitude": 28.5966071, "Longitude": 77.0616175 }, "geometry": { "type": "Point", "coordinates": [ 77.0616175, 28.5966071 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector - 6, D D A Pocket - 1 , Dwarka, 2 - Sector - 6, D D A Pocket - 2, Dwarka", "Latitude": 28.6001066, "Longitude": 77.0711058 }, "geometry": { "type": "Point", "coordinates": [ 77.0711058, 28.6001066 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Rudra Appartment, Dwarka Plot No 12 Sector 6, 2 - Fire Station, Dwarka Sector 6, 3 - The Palms Appt., Dwarka Plot No 13 B Sector-6, 4 - Swami Dayanand Cghs Ltd , Dwarka Plot No 5 Sector 6, 5 - Diamond Square Cghs Ltd, Plot No-13A Sec-6 Dwarka, 6 - Youngsters Cghs Ltd, Plot No 13C Sec-6 Dwarka", "Latitude": 28.5900986, "Longitude": 77.0694616 }, "geometry": { "type": "Point", "coordinates": [ 77.0694616, 28.5900986 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kaveri Apptt, Dwarka Plot No 4 Sector 6, 2 - Vrindavan Apptt Sector 6, Dwarka Plot No 1, 3 - Guru Apptt , Dwarka Plot No 2 Sector 6", "Latitude": 28.5928446, "Longitude": 77.0636419 }, "geometry": { "type": "Point", "coordinates": [ 77.0636419, 28.5928446 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " New Ashiana Apptt, Dwarka Plot No 10 Sector 6, 2 - Sahara Apptt, Dwarka Plot No 11 Sector 6, 3 - Great India Apptt, Dwarka Plot No15 Sector 6, 4 - Sarve Satyam, Cghs Ltd., Dwarka Plot No 12 Sector 4", "Latitude": 28.5966227, "Longitude": 77.0651704 }, "geometry": { "type": "Point", "coordinates": [ 77.0651704, 28.5966227 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Vasundhra Apptt , Dwarka Plot No 16 Sector 6, 2 - Akash Ganga Apptt, Dwarka Plot No 17 Sector 6", "Latitude": 28.5950753, "Longitude": 77.0559623 }, "geometry": { "type": "Point", "coordinates": [ 77.0559623, 28.5950753 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " R D Apptt, Dwarka Plot No 20 Sector - 6, 2 - Anusandhan Apptt, Dwarka Plot No 22 Sector 6, 3 - Som Apptt, Dwarka Plot No 24 Sector 6, 4 - Sanmati Kunj, Dwarka Plot No-19A Sector-6, 5 - Veg Sanchar Vihar C.G.H.S.Ltd., Plot No-19B Sec-6 Dwarka", "Latitude": 28.5666882, "Longitude": 77.0653607 }, "geometry": { "type": "Point", "coordinates": [ 77.0653607, 28.5666882 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Karor Apptt, Dwarka Plot No 39-C Sector 6, 2 - Adarsh Arya Apptt., Dwarka Plot No 39-A Sector - 6, 3 - Param Punit Apptt., Dwarka Plot No 27 Sector - 6, 4 - Kalka Apptt., Dwarka Plot No 31 Sector - 6, 5 - Palam Vihar, Dwarka Sector-6", "Latitude": 28.5897836, "Longitude": 77.0608655 }, "geometry": { "type": "Point", "coordinates": [ 77.0608655, 28.5897836 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Princes Park, Dwarka Plot No 33 Sector 6, 2 - Unique Apptt., Dwarka Plot-38, Sector - 6, 3 - Kamakshi Apptt., Dwarka Plot No 28 Sector - 6", "Latitude": 28.5911651, "Longitude": 77.0669861 }, "geometry": { "type": "Point", "coordinates": [ 77.0669861, 28.5911651 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Daffo Dills Apptt., Dwarka Plot No 36 Sector 6, 2 - Hanemann Enclave, Dwarka Plot No 40 Sector - 6, 3 - Surya Appartment, Dwarka Plot No 14 Sector 6, 4 - Rudra Appartment, Dwarka Plot No-12 Sector-6", "Latitude": 28.5878877, "Longitude": 77.0636171 }, "geometry": { "type": "Point", "coordinates": [ 77.0636171, 28.5878877 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Manglik Apptt., Dwarka Plot No 25 Sector - 6, 2 - United Friends Apptt., Dwarka Plot No 9 Sector -6, 3 - Katyayani Apptt., Dwarka Plot-8 Sector -6, 4 - Gyan Shakti Apptt., Dwarka Plot No 7 Sector -6, 5 - Vidya Sagar Aptt., Dwarka Plot No.34 Sector-6", "Latitude": 28.5960399, "Longitude": 77.0621073 }, "geometry": { "type": "Point", "coordinates": [ 77.0621073, 28.5960399 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sabka Ghar, Dwarka Plot No 23 Sector 6, 2 - Shiv Lok Apptt., Dwarka Plot-6 Sector-6, 3 - Shivalik Apptt., Dwarka Plot No 32 Sector -6, 4 - True Friends Cghs Ltd, Dwarka Plot No 29 Sector 6, 5 - Sector- 6, Dwarka", "Latitude": 28.5942533, "Longitude": 77.0654876 }, "geometry": { "type": "Point", "coordinates": [ 77.0654876, 28.5942533 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sri Balaji Apptt., Dwarka Plot No 37 Sector - 6, 2 - Santosh Apptt., Dwarka Plot No 39-B Sector - 6, 3 - , Skylark Apptt., Dwarka Plot No-35 Sector 6, 4 - Badhwar Appartment, Dwarka Plot No 3 Sector - 6, 5 - Bahawal Pur Apptt., Dwarka Plot No- 30 Sector 6, 6 - Mayank C G H S Ltd, Dwarka Plot No 21 Sector 6, 7 - Prakriti Apptt., Dwarka Plot No 26 Sector - 6 ,", "Latitude": 28.5932457, "Longitude": 77.0599093 }, "geometry": { "type": "Point", "coordinates": [ 77.0599093, 28.5932457 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Chandan Wadi Apptt., Dwarka Plot - 8 Sector -10, 2 - Gayatri Apptt., Dwarka Plot 27 Sector 10, 3 - Hilansh Aptt., Dwarka Plot -1, Sector -10, 4 - Dharam Vihar , Dwarka Plot -2 Sector -10, 5 - Rastrapati Bhawan Society, Dwarka Plot No3 Sector 10, 6 - Rajni Gandha Aptt , Dwarka Plot -4 Sector 10, 7 - The Great Lyallpur Housing Society, Ph-1, Dwarka Plot No35 Sector 10", "Latitude": 34.0794286, "Longitude": 75.4162634 }, "geometry": { "type": "Point", "coordinates": [ 75.4162634, 34.0794286 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " H M M Society , Dwarka Plot -6 Sector 10, 2 - Pragjyotish Pur, Dwarka Plot No7 Sector 10, 3 - Shiv Shakti Apptt., Dwarkaplot No10 Sector 10, 4 - Bandhu Vihar , Plot 11 , Dwarka Sector 10, 5 - Prerna Apptt., Dwarka Plot -13 Sector 10, 6 - New Cosmopolitan Apptt., Dwarka Plot No33 Sector 10, 7 - Maitri Apptt., Dwarka Plot 17 Sector 10, 8 - Nanda Devi Aptt., Dwarka Plot 19 Sector 10", "Latitude": 28.5876082, "Longitude": 77.0622927 }, "geometry": { "type": "Point", "coordinates": [ 77.0622927, 28.5876082 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " DDA Pocket-1 Sector 10 , Dwarka, 2 - Manchahat Apptt., Dwarka Plot 42 Sector 10, 3 - Apna Village, Dwarka Plot No 23 Sector 10, 4 - Elephanta Heights Apptt, Dwarka Plot 41 Sec-10, 5 - Manbhavan Apptt., Dwarka Plot 26 Sector 10, 6 - Golok Dham Ashram, Dwarka Plot No Sector-10, 7 - Fakhruddin Apptt Plot-18, Sec-10, Dwarka, 8 - Panchsheel Aptts Gandhi Ashram Cghs Ltd, Dwarka Ptot 9 Sec 10, 9 - Saral C.G.H.S. Ltd., Plot No.-15, Sec-10, Dwarka", "Latitude": 28.5781859, "Longitude": 77.0528484 }, "geometry": { "type": "Point", "coordinates": [ 77.0528484, 28.5781859 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shama Apptt., Dwarka Plot -32 Sector 10, 2 - Suruchi Apptt., Dwarka Plot 31 Sector 10, 3 - D D A House ( Kothi) , Dwarka Sector-10, 4 - Supriya Apptt, Dwarka Plot -20 Sector 10, 5 - DIVya Apptt., Dwarka Plot -21 Sector 10, 6 - New Adarsh Apptt., Dwarka . Plot -22 Sector 10", "Latitude": 28.5830967, "Longitude": 77.0585236 }, "geometry": { "type": "Point", "coordinates": [ 77.0585236, 28.5830967 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " B P C L Aptt., Dwarka Plot -23 A Sector 10, 2 - M A S S Society , Dwarka Plot -24 Sector 10, 3 - Cosmos Society , Plot -28, Dwarka Sector 10, 4 - Pra Bhavi Apptt. Plot -29 B, Dwarka Sector 10, 5 - Rohit Apptt. Plot -30 , Dwarka Sector 10", "Latitude": 28.5811243, "Longitude": 77.0575085 }, "geometry": { "type": "Point", "coordinates": [ 77.0575085, 28.5811243 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Madhur JIVan Apptt., Dwarka Plot -34 Sector 10, 2 - Vinayaka Apptt., Dwarka Plot -36 Sector 10, 3 - Thiruvizha Cghs Ltd, Dwarka Plot37 Sector-10, 4 - Saksham Aptt., Dwarka Plot No 40B Sector-10, 5 - Nuovo Appt, Dwarka Plot No-25, Sector-10, 6 - Pacific Apptt., Dwarka Plot -39 Sector 10, 7 - Amba C G H S Ltd, Dwarka Plot -5 Sector 10, 8 - Shakuntala M Apptt., Dwarka, Plot -16 Sector 10, 9 - Godrej Appartment, Dwarka , Plot 14 Sector 10, 10 - I.I.T Engineers Cghs Ltd, Dwarka Plot No 12 Sector 10, 1 The Eligible C.G.H.S.Ltd. Plot No-38, Sec-10 Dwarka Ph-I, 12 - Baroda House N.R.G.E. C.G.H.S.Ltd., Plot No 40A Sec-10 Dwarka", "Latitude": 28.5861631, "Longitude": 77.0610111 }, "geometry": { "type": "Point", "coordinates": [ 77.0610111, 28.5861631 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Dr R M L Apptt., Dwarka Plot No-2 Sector -11, 2 - Rama Apptt. Sector-11, Dwarka, 3 - Gangotri Apptt. DDA Pkt 1 Sec, 12, Dwarka", "Latitude": 28.5945605, "Longitude": 77.0512656 }, "geometry": { "type": "Point", "coordinates": [ 77.0512656, 28.5945605 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Ashirvad Aptt, Dwarka Plot No-11 Sector 12, 2 - Gold Crofts , Dwarka, Plot 4, Sector-11, 3 - Ashoka Enclave, Dwarka Plot No-8A, Sector-11, 4 - Idc Apptt., Plot No.-8C, Sec-11, Dwarka, 5 - Sunview Apptt. Pocket-4, Sec-11, Dwarka, 6 - Pragatisheel Bairwa C.G.H.S. Ltd., Plot No.-5C, Sec-11, Dwarka, 7 - Modest Ketki Cghs Ltd. Plot No.8-B, Sec.-11, Ph-1, Dwarka, 8 - Shiam Apptt. Plot 5D, Sector -11 Dwarka, 9 - Gulmohar Apatt. Plot No 3B, Sector -11 Dwarka, 10 - Apni Cghs Ltd Plot No 5B, Sector -11 Dwarka, 1 Chinar Cghs Plot No-3, Sec-18, Dwarka", "Latitude": 28.5945605, "Longitude": 77.0512656 }, "geometry": { "type": "Point", "coordinates": [ 77.0512656, 28.5945605 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Park View Apptt., Dwarka Plot No-16 Sector 12, 2 - Ashoka Apptt., Dwarka Plot - 8 Sector 12, 3 - Upkari Apptt., Dwarka Plot - 9 Sector 12, 4 - Abhiyan Apptt., Dwarka Plot -15 Sector 12, 5 - Vimal Apptt, Dwarka Plot - 3 Sector 12", "Latitude": 28.5957397, "Longitude": 77.0455834 }, "geometry": { "type": "Point", "coordinates": [ 77.0455834, 28.5957397 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " SFS DDA Flat Pocket-4 , Dwarka Sector 12, 2 - Sector -12 DDA Flats Pocket -6, Dwarka, 3 - Shahjahanabad Society, Dwarka Plot 1 Sector 11, 4 - Shivam Apptt Sector-12, Dwarka, 5 - Navsanjeevan Appartments Plot-1, Sector-12 Dwarka, 6 - Pocket-4, DDA Flats, Dwarka Sector 11", "Latitude": 28.5937647, "Longitude": 77.0434934 }, "geometry": { "type": "Point", "coordinates": [ 77.0434934, 28.5937647 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Indraprastha Aptt D D A Flat, Pocket 3 , Dwarka Sector 12, 2 - Vikram Nagar Apptt, Dwarka Plot -14 Sector 12, 3 - K M Apptt., Dwarka Plot -12 Sector 12, 4 - DDA Flats Pocket -6, Dwarka Sector -12, 5 - Shubham Aptt DDA Flat, Pocket - 4 , Dwarka Sector 12", "Latitude": 28.5956549, "Longitude": 77.0458461 }, "geometry": { "type": "Point", "coordinates": [ 77.0458461, 28.5956549 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Vidyut Apptt. , Dwarka Plot 2 Sector -12, 2 - Ishwar Apptt., Dwarka Plot 4 Sector 12, 3 - D D A Pocket -2, Sector -12, Dwarkadhish Appt., Dwarka, 4 - Sahyadri Apptt. Plot 5, Dwarka Sector 12, 5 - D D A, Pocket-8, M I G Flats, Suryodaya Appt, Sector 12 Dwarka", "Latitude": 28.5937647, "Longitude": 77.0434934 }, "geometry": { "type": "Point", "coordinates": [ 77.0434934, 28.5937647 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shri Hari Apptt, Dwarka Plot No 6 Sec.12., 2 - Sec-12 Plot No-27 Sunny Valley, Dwarka, 3 - Seema Apptt., Dwarka , Plot 7 Sector -11", "Latitude": 28.6078176, "Longitude": 77.0406147 }, "geometry": { "type": "Point", "coordinates": [ 77.0406147, 28.6078176 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D D A Flat Pocket -1, Sector -11, Dwarka, 2 - Sant Sunder Dass Ji C.G.H.S Plot No 21 Sec-12, Dwarka, 3 - Appu Enclave C.G.H.S Plot No 3D Sec-11, Dwarka, 4 - Anjuman C.G.H.S Ltd., Plot No-20 Sec-12 Dwarka, 5 - Bharat Jagriti C.G.H.S. Ltd., Plot No.-22, Sec-12, Dwarka", "Latitude": 28.5941893, "Longitude": 77.0506753 }, "geometry": { "type": "Point", "coordinates": [ 77.0506753, 28.5941893 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D D A Pocket -2, Dwarka Plot No-10, Sector -11, 2 - Yash Apptt., Dwarka Plot 9 Sector -11, 3 - Young Heritaje Appt., Sector-11, Dwarka Plot No-10, 4 - D D A Pocket -3, Sector -11, Dwarka, 5 - Ag Bros. Cghs Ltd, Dwarka Plot No-3C Sec-11", "Latitude": 28.5914547, "Longitude": 77.0492504 }, "geometry": { "type": "Point", "coordinates": [ 77.0492504, 28.5914547 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D D A, Pocket-8, Golden Heights Appt., Sector 12 Dwarka, 2 - D D A Pocket -7, Sector -12, Dwarka, 3 - Sapna Ghar C.G.H.S.Ltd., Plot No-6B Sec-11 Dwarka", "Latitude": 28.5961467, "Longitude": 77.0391153 }, "geometry": { "type": "Point", "coordinates": [ 77.0391153, 28.5961467 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kothi , Sector -12A, Dwarka, 2 - New Arohi Aptt Sector -12 Plot No-13 , Dwarika, 3 - D D A Pocket -5, Sector -12, Dwarka, 4 - Kanak Durga Apptt. Sec-12 Plot No-26, Dwarika, 5 - Brindawan Garden Apptt. Plot 10, Dwarka Sector -12, 6 - Kanaka Durga Apptt Sec-12 Plot No-26, Dwarika, 7 - Mohinder Apptt., Plot No.-17, Sec-12, Dwarka, Ph-II, 8 - Shivani Cghs Ltd Plot No-18 Sector-12, Dwarka", "Latitude": 28.5921401, "Longitude": 77.0460481 }, "geometry": { "type": "Point", "coordinates": [ 77.0460481, 28.5921401 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Rosewood Appt.Pkt-A Phase-2, Sec-13 Dwarka", "Latitude": 28.5934714, "Longitude": 77.0339485 }, "geometry": { "type": "Point", "coordinates": [ 77.0339485, 28.5934714 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector -14, Pocket -2, Dwarka, 2 - Pocket -1, Phase -2, Sector -13 , Dwarka", "Latitude": 28.5991332, "Longitude": 77.0669398 }, "geometry": { "type": "Point", "coordinates": [ 77.0669398, 28.5991332 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Metro View Aptt D D A (SFS)Flats , Pkt -B, Sector -13 Dwarka", "Latitude": 28.5921401, "Longitude": 77.0460481 }, "geometry": { "type": "Point", "coordinates": [ 77.0460481, 28.5921401 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Netaji Subhash Apptt. Pocket -1, Dwarka Sector 13, 2 - D J A Apptt. Plot 1, Dwarka Sector -13", "Latitude": 28.6044605, "Longitude": 77.0369362 }, "geometry": { "type": "Point", "coordinates": [ 77.0369362, 28.6044605 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Ayudh Vihar , Plot 3, Dwarka Sector -13, 2 - Maha Bhadra Kali Apptt. , Plot 6, Sector -13, Dwarka", "Latitude": 28.6023023, "Longitude": 77.0404143 }, "geometry": { "type": "Point", "coordinates": [ 77.0404143, 28.6023023 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Lig Flats, Sector -14, Pocket -2, Ph-II , Dwarka", "Latitude": 22.2441975, "Longitude": 68.9684562 }, "geometry": { "type": "Point", "coordinates": [ 68.9684562, 22.2441975 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kautilya Appt. M I G Pkt B Sec-14 DDA Flats , Dwarka, 2 - Shaheed Bhagat Singh Appt Pkt-3, Ph-II Sec-14 Dwarka", "Latitude": 28.6055449, "Longitude": 77.0339631 }, "geometry": { "type": "Point", "coordinates": [ 77.0339631, 28.6055449 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " DDA Flats, Sector -14, Pocket-1, Dwarka, 2 - DDA Mig , Sector-14, Pocket-B, Ph-II, Dwarka, 3 - National Law UnIVersity Sec-14, Dwarka", "Latitude": 28.5993637, "Longitude": 77.0643614 }, "geometry": { "type": "Point", "coordinates": [ 77.0643614, 28.5993637 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A - Block Pkt 2 & 3 , J J Colony , Dwarka Sector - 16A, 2 - B - Block , Pkt 2 & 3 , J J Colony, Dwarka Sector - 16A, 3 - C Block Pkt -2 & 3 J J Colony, Dwarka Sector - 16A", "Latitude": 28.5921401, "Longitude": 77.0460481 }, "geometry": { "type": "Point", "coordinates": [ 77.0460481, 28.5921401 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D Block, Pkt-3, Sec-16A, J J Colony, Dwarka, 2 - E Block Pkt2 & 3 , J J Colony, Dwarka Sector - 16A", "Latitude": 28.6074491, "Longitude": 77.0644213 }, "geometry": { "type": "Point", "coordinates": [ 77.0644213, 28.6074491 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " F Block , Pocket 2 & 3 , J J Colony, Dwarka Sector - 16A", "Latitude": 28.6074491, "Longitude": 77.0442613 }, "geometry": { "type": "Point", "coordinates": [ 77.0442613, 28.6074491 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " G Block, Pocket-2, Sector-16A, J J Colony, Dwarka, 2 - H Block, Pocket-2, Sector-16A, J J Colony, Dwarka, 3 - J Block, Pocket-2, Sector-16A, J J Colony, Dwarka, 4 - K Block, Pocket-2, Sector-16A, J J Colony, Dwarka, 5 - G Block , Pocket-3, Sector-16A, J J Colony, Dwarka, 6 - H Block, Pocket-3, Sector-16A, J J Colony, Dwarka, 7 - I Block, Pocket-3, Sector-16A, J J Colony, Dwarka, 8 - J Block, Pocket-3, Sector-16A, J J Colony, Dwarka, 9 - K Block, Pocket-3, Sector-16A, J J Colony, Dwarka", "Latitude": 28.6078176, "Longitude": 77.0406147 }, "geometry": { "type": "Point", "coordinates": [ 77.0406147, 28.6078176 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " L Block Pocket 2, J J Colony, Sector-16A, Dwarka, 2 - M Block , Pkt-3, J J Colony, Sector-16A, Dwarka, 3 - N Block , Pocket, 3 J J Colony, Sector-16A, Dwarka, 4 - O Block , Pocket- 3 , J J Colony, Sector-16A, Dwarka, 5 - P Block , Pocket-3 , J J Colony, Sector-16A, Dwarka, 6 - Q Block , Pocket-3 , J J Colony, Sector-16A , Dwarka, 7 - R Block Pocket-3 , J J Colony, Sector-16A , Dwarka, 8 - L Block, Pocket-3, J J Colony, Sector-16A, Dwarka", "Latitude": 28.6074491, "Longitude": 77.0445213 }, "geometry": { "type": "Point", "coordinates": [ 77.0445213, 28.6074491 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Janta Flats, Pocket-B, Sector-16B, Dwarka, 2 - M I G Flats, Sector-16B, Dwarka, 3 - Lig Flats, Sector-16B, Dwarka, 4 - Sfa Qtrs(Bsf) Pkt-1, Sec-16B Dwarka, 5 - Orrisa State Govt Staff Qtr Sec-16B, Dwarka", "Latitude": 28.5998217, "Longitude": 77.0173416 }, "geometry": { "type": "Point", "coordinates": [ 77.0173416, 28.5998217 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Delhi Police Residential Complex Sec-16B, Dwarka, 2 - Crpf Residential Complex Sec-16B, Dwarka, 3 - DDA Flats, Lig Pocket-3C, Sec-16B, Bharat Aptt. Dwarka", "Latitude": 28.5990737, "Longitude": 77.0217575 }, "geometry": { "type": "Point", "coordinates": [ 77.0217575, 28.5990737 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shiv Park, Kakraula Village, 2 - Raju Extn., Kakraula Village, 3 - Shyam Vihar, Kakraula Village, 4 - Ambika Enclave, Kakraula Village, 5 - Raju Enclave, Kakraula Village", "Latitude": 28.6084537, "Longitude": 77.0175832 }, "geometry": { "type": "Point", "coordinates": [ 77.0175832, 28.6084537 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Ph - 1 , 2 & 3 Shivani Enclave, Kakraula Village", "Latitude": 28.6118533, "Longitude": 77.0265804 }, "geometry": { "type": "Point", "coordinates": [ 77.0265804, 28.6118533 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C - Block Bharat Vihar, Kakraula", "Latitude": 28.6077874, "Longitude": 77.0289405 }, "geometry": { "type": "Point", "coordinates": [ 77.0289405, 28.6077874 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E - Block Bhart Vihar, Kakraula", "Latitude": 28.6056605, "Longitude": 77.0238813 }, "geometry": { "type": "Point", "coordinates": [ 77.0238813, 28.6056605 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pocket A J J Colony , Sector - 15, Bharat Vihar Kakraula", "Latitude": 28.6153012, "Longitude": 77.0290995 }, "geometry": { "type": "Point", "coordinates": [ 77.0290995, 28.6153012 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pocket B , Sector - 15 J J Colony, Bharat Vihar Kakraula", "Latitude": 28.6153012, "Longitude": 77.0290995 }, "geometry": { "type": "Point", "coordinates": [ 77.0290995, 28.6153012 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pocket C Sector - 15 , J J Colony , Bharat Vihar Kakraula", "Latitude": 28.6153012, "Longitude": 77.0290995 }, "geometry": { "type": "Point", "coordinates": [ 77.0290995, 28.6153012 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A - Block Tara Nagar, Kakraula Village, 2 - Tara Nagar, Kakraula Village", "Latitude": 28.6137617, "Longitude": 77.0287001 }, "geometry": { "type": "Point", "coordinates": [ 77.0287001, 28.6137617 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Duggal Farm Tara Nagar, Kakraula Village", "Latitude": 28.6132786, "Longitude": 77.0285597 }, "geometry": { "type": "Point", "coordinates": [ 77.0285597, 28.6132786 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Duggal Farm Tara Nagar, Kakraula Village, 2 - Kakraula Village", "Latitude": 28.6132786, "Longitude": 77.0285597 }, "geometry": { "type": "Point", "coordinates": [ 77.0285597, 28.6132786 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Bajaj Enclave Extn, Kakraula, 2 - Bajaj Enclave, Kakraula", "Latitude": 28.6142613, "Longitude": 77.0294594 }, "geometry": { "type": "Point", "coordinates": [ 77.0294594, 28.6142613 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Suraj Vihar, Kakraula, 2 - Mohit Nagar, Kakraula, 3 - Chandra Park, Old Palam Road, Kakrola", "Latitude": 28.6118619, "Longitude": 77.0304874 }, "geometry": { "type": "Point", "coordinates": [ 77.0304874, 28.6118619 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " B - Block, Bharat Vihar Kakraula", "Latitude": 28.6071529, "Longitude": 77.0596844 }, "geometry": { "type": "Point", "coordinates": [ 77.0596844, 28.6071529 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " B - 1 Block , Bharat Vihar Kakraula, 2 - B - 2 Block, Bharat Vihar Kakraula", "Latitude": 28.6073381, "Longitude": 77.0265386 }, "geometry": { "type": "Point", "coordinates": [ 77.0265386, 28.6073381 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A - Block, Bharat Vihar Kakraula", "Latitude": 28.6093715, "Longitude": 77.0275548 }, "geometry": { "type": "Point", "coordinates": [ 77.0275548, 28.6093715 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D - Block, Bhart Vihar Kakraula", "Latitude": 28.6077874, "Longitude": 77.0289405 }, "geometry": { "type": "Point", "coordinates": [ 77.0289405, 28.6077874 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Golden Enclave, Ranaji Enclave Part I, 2 - Golden Enclave, Ranaji Enclave Part I", "Latitude": 28.6182222, "Longitude": 77.0150014 }, "geometry": { "type": "Point", "coordinates": [ 77.0150014, 28.6182222 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Golden Enclave, Ranaji Enclave Part I", "Latitude": 28.6177355, "Longitude": 77.0144612 }, "geometry": { "type": "Point", "coordinates": [ 77.0144612, 28.6177355 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " M.S Block, Rana Ji Enclave Part III, 2 - Ranaji Enclave Extn, Ranaji Enclave, 3 - J P Block, Ranaji Enclave", "Latitude": 28.6157575, "Longitude": 77.0133179 }, "geometry": { "type": "Point", "coordinates": [ 77.0133179, 28.6157575 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A Block, Arjun Park", "Latitude": 28.6222243, "Longitude": 77.0118246 }, "geometry": { "type": "Point", "coordinates": [ 77.0118246, 28.6222243 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C Block , Arjun Park", "Latitude": 28.6184013, "Longitude": 77.0119612 }, "geometry": { "type": "Point", "coordinates": [ 77.0119612, 28.6184013 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " B Block, Arjun Park", "Latitude": 28.6233983, "Longitude": 77.0102137 }, "geometry": { "type": "Point", "coordinates": [ 77.0102137, 28.6233983 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D Block, Arjun Park", "Latitude": 28.6257675, "Longitude": 77.0058858 }, "geometry": { "type": "Point", "coordinates": [ 77.0058858, 28.6257675 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Ishwar Colony , Arjun Park", "Latitude": 28.6209752, "Longitude": 77.0150025 }, "geometry": { "type": "Point", "coordinates": [ 77.0150025, 28.6209752 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Anand Vihar, Nangli Sakrawati", "Latitude": 28.6185724, "Longitude": 77.0111048 }, "geometry": { "type": "Point", "coordinates": [ 77.0111048, 28.6185724 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sai Dham, Nangli Sakrawati, 2 - Jemini Park , Nangli Sakrwati", "Latitude": 28.6186654, "Longitude": 77.0081165 }, "geometry": { "type": "Point", "coordinates": [ 77.0081165, 28.6186654 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Chauk Panna , Nangli Sakrawati Village, 2 - Pacha Panna , Nangli Sakrawti Village, 3 - Balmiki Chaupal Area, Nangli Sakrawati Village", "Latitude": 28.6520305, "Longitude": 77.0012882 }, "geometry": { "type": "Point", "coordinates": [ 77.0012882, 28.6520305 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Bagat Panna , Nangli Sakrawati Village", "Latitude": 28.6250305, "Longitude": 77.0012882 }, "geometry": { "type": "Point", "coordinates": [ 77.0012882, 28.6250305 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nangli Vihar Part-1, Nangli Sakrawati Village", "Latitude": 28.6169042, "Longitude": 77.0504986 }, "geometry": { "type": "Point", "coordinates": [ 77.0504986, 28.6169042 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Nangli Sakrawati Village, 2 - Factory Area, Nangli Sakrawati", "Latitude": 28.6212341, "Longitude": 77.0025392 }, "geometry": { "type": "Point", "coordinates": [ 77.0025392, 28.6212341 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nangli Vihar Part-1, Nangli Sakrawati Village", "Latitude": 28.6169042, "Longitude": 77.0504986 }, "geometry": { "type": "Point", "coordinates": [ 77.0504986, 28.6169042 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Ghasipura Village, 2 - Ghasipura Extn., Ghasipura Village", "Latitude": 21.2146112, "Longitude": 86.1128314 }, "geometry": { "type": "Point", "coordinates": [ 86.1128314, 21.2146112 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nangli Dairy, Nangli Sakrawati", "Latitude": 28.6218569, "Longitude": 77.0154238 }, "geometry": { "type": "Point", "coordinates": [ 77.0154238, 28.6218569 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " T. Hut, Nangli Diary, Nangli Sakrawati, 2 - Niranjan Park Nangli Dairy, Nangli Sakrawati", "Latitude": 28.6218569, "Longitude": 77.0154238 }, "geometry": { "type": "Point", "coordinates": [ 77.0154238, 28.6218569 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nangli Vihar, Nangli Sakrawati", "Latitude": 28.6227827, "Longitude": 77.0175832 }, "geometry": { "type": "Point", "coordinates": [ 77.0175832, 28.6227827 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Prem Vihar, Nangali Dairy", "Latitude": 28.6218569, "Longitude": 77.0154238 }, "geometry": { "type": "Point", "coordinates": [ 77.0154238, 28.6218569 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " B Block, Shyam Vihar Ph-1, Dindarpur Village", "Latitude": 28.5953145, "Longitude": 77.0003067 }, "geometry": { "type": "Point", "coordinates": [ 77.0003067, 28.5953145 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A Block, Shyam Vihar Ph-1 , Dindar Pur Village, 2 - C Block Shyam Vihar Ph-1, Dindar Pur Village", "Latitude": 28.5861798, "Longitude": 77.0016373 }, "geometry": { "type": "Point", "coordinates": [ 77.0016373, 28.5861798 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A Block, Shyam Vihar Ph-1 , Dindar Pur Village", "Latitude": 28.5953145, "Longitude": 77.0003067 }, "geometry": { "type": "Point", "coordinates": [ 77.0003067, 28.5953145 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D Block, Shyam Vihar Ph-1, Dindar Pur Village", "Latitude": 28.5953145, "Longitude": 77.0003067 }, "geometry": { "type": "Point", "coordinates": [ 77.0003067, 28.5953145 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E Block, Shyam Vihar Ph-1, Dindar Pur Village", "Latitude": 28.5953145, "Longitude": 77.0003067 }, "geometry": { "type": "Point", "coordinates": [ 77.0003067, 28.5953145 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E-Block Extn, Shyam Vihar Ph-1, Deendar Pur Village, 2 - F Block, Shyam Vihar Ph-1, Dindar Pur Village", "Latitude": 28.6089538, "Longitude": 77.0558348 }, "geometry": { "type": "Point", "coordinates": [ 77.0558348, 28.6089538 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " G Block, Shyam Vihar, Ph-1, Dindar Pur Village, 2 - Z Block, Shyam Vihar Ph-1, Dindar Pur Village, 3 - J - Block Shyam Vihar Ph-1, Dindar Pur Village, 4 - X Block Shyam Vihar Ph-1, Dindar Pur Village", "Latitude": 28.5925362, "Longitude": 76.9938274 }, "geometry": { "type": "Point", "coordinates": [ 76.9938274, 28.5925362 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shyam Vihar Ph-2, Dindar Pur Village, 2 - Shyam Vihar Ph-II, Near Pooja Factory", "Latitude": 28.5925362, "Longitude": 76.9938274 }, "geometry": { "type": "Point", "coordinates": [ 76.9938274, 28.5925362 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shyam Vihar Ph-II , Dindar Pur Village", "Latitude": 28.5861798, "Longitude": 77.0016373 }, "geometry": { "type": "Point", "coordinates": [ 77.0016373, 28.5861798 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shyam Vihar Ph-II , Dindar Pur Village", "Latitude": 28.5861798, "Longitude": 77.0016373 }, "geometry": { "type": "Point", "coordinates": [ 77.0016373, 28.5861798 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shyam Enclave, Dindar Pur Village", "Latitude": 28.5926321, "Longitude": 76.9985069 }, "geometry": { "type": "Point", "coordinates": [ 76.9985069, 28.5926321 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Shiv Puri Phase-2 , Dindar Pur Village, 2 - Kumar Enclave, Dindar Pur Village", "Latitude": 25.4357869, "Longitude": 77.6658066 }, "geometry": { "type": "Point", "coordinates": [ 77.6658066, 25.4357869 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Main Gurgaon Road, Dindar Pur Village", "Latitude": 28.5927075, "Longitude": 76.9923151 }, "geometry": { "type": "Point", "coordinates": [ 76.9923151, 28.5927075 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Main Gurgaon Road, Dindar Pur Village", "Latitude": 28.5927075, "Longitude": 76.9923151 }, "geometry": { "type": "Point", "coordinates": [ 76.9923151, 28.5927075 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Data Ram Park, Dindar Pur, 2 - Dindar Pur Extn., Dindar Pur Village, 3 - Dindar Pur, Village, 4 - Durga Park, Dindar Pur Extn", "Latitude": 28.5945013, "Longitude": 76.9905876 }, "geometry": { "type": "Point", "coordinates": [ 76.9905876, 28.5945013 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Old Chaupal Side Village, Dindarpur Village", "Latitude": 30.9478979, "Longitude": 77.5901243 }, "geometry": { "type": "Point", "coordinates": [ 77.5901243, 30.9478979 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Surya Vihar, Dindar Pur Village, 2 - Gandhi Park, Dindar Pur Village, 3 - Bhawani Nagar, Dindar Pur Village, 4 - Shiv Puri Phase-1, Dindar Pur Village", "Latitude": 28.5174627, "Longitude": 77.0773122 }, "geometry": { "type": "Point", "coordinates": [ 77.0773122, 28.5174627 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Durga Vihar Phase 1 , Dindar Pur", "Latitude": 28.5945633, "Longitude": 76.9851877 }, "geometry": { "type": "Point", "coordinates": [ 76.9851877, 28.5945633 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A Block Durga Vihar Phase-2, Dindar Pur, 2 - B Block Durga Vihar Ph-2, Dindar Pur, 3 - D Block Durga Vihar Ph-2 , Dindar Pur, 4 - Durga C-Block Ph-2, Durga Vihar, 5 - C Block Durga Vihar Ph-2, Dindar Pur, 6 - Durga Vihar 1&III, Dindar Pur", "Latitude": 28.5926596, "Longitude": 76.9915812 }, "geometry": { "type": "Point", "coordinates": [ 76.9915812, 28.5926596 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Durga Vihar Ph.-2 , Dindarpur Village", "Latitude": 28.5971631, "Longitude": 76.9835535 }, "geometry": { "type": "Point", "coordinates": [ 76.9835535, 28.5971631 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Durga Vihar Ph.-2 , Dindarpur Village", "Latitude": 28.5971631, "Longitude": 76.9835535 }, "geometry": { "type": "Point", "coordinates": [ 76.9835535, 28.5971631 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sarika Vihar, Dindarpur Village, 2 - Shanti Vihar, Dindar Pur, 3 - Ganga Vihar, Dindarpur, 4 - Brij Vihar, Dindar Pur, 5 - Munirka Kunj, Dindar Pur", "Latitude": 28.5892071, "Longitude": 76.9927474 }, "geometry": { "type": "Point", "coordinates": [ 76.9927474, 28.5892071 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kakraula Diary , Nand Vihar", "Latitude": 28.6144645, "Longitude": 77.0204624 }, "geometry": { "type": "Point", "coordinates": [ 77.0204624, 28.6144645 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nand Vihar, Kakraula Village", "Latitude": 28.6084537, "Longitude": 77.0175832 }, "geometry": { "type": "Point", "coordinates": [ 77.0175832, 28.6084537 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A Block Patel Garden, Kakraula Village, 2 - B Block Patel Garden, Kakraula Village", "Latitude": 28.6166198, "Longitude": 77.0316186 }, "geometry": { "type": "Point", "coordinates": [ 77.0316186, 28.6166198 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C Block Patel Garden, Kakraula Village", "Latitude": 28.6176653, "Longitude": 77.0304566 }, "geometry": { "type": "Point", "coordinates": [ 77.0304566, 28.6176653 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D Block Patel Garden, Kakraula Village, 2 - E Block Patel Garden, Kakraula Village", "Latitude": 28.6176653, "Longitude": 77.0304566 }, "geometry": { "type": "Point", "coordinates": [ 77.0304566, 28.6176653 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kakrola Housing Complex , Kakraula Village", "Latitude": 28.6172453, "Longitude": 77.0286594 }, "geometry": { "type": "Point", "coordinates": [ 77.0286594, 28.6172453 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kakrola Housing Complex , Kakraula Village", "Latitude": 28.6172453, "Longitude": 77.0286594 }, "geometry": { "type": "Point", "coordinates": [ 77.0286594, 28.6172453 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nishant Park , Kakraula", "Latitude": 28.6183551, "Longitude": 77.0273002 }, "geometry": { "type": "Point", "coordinates": [ 77.0273002, 28.6183551 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A Block Vikas Vihar, Kakraula, 2 - B Block Vikas Vihar, Kakraula", "Latitude": 28.6093888, "Longitude": 77.0234782 }, "geometry": { "type": "Point", "coordinates": [ 77.0234782, 28.6093888 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C Block Vikas Vihar, Kakraula", "Latitude": 28.6093888, "Longitude": 77.0234782 }, "geometry": { "type": "Point", "coordinates": [ 77.0234782, 28.6093888 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Mandir Road, Hari Vihar, Kakrola", "Latitude": 28.6515535, "Longitude": 77.0258045 }, "geometry": { "type": "Point", "coordinates": [ 77.0258045, 28.6515535 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Gurudwara Road, Hari Vihar, Kakrola", "Latitude": 28.6179346, "Longitude": 77.0234108 }, "geometry": { "type": "Point", "coordinates": [ 77.0234108, 28.6179346 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Goyla Khurd Village", "Latitude": 28.5856606, "Longitude": 77.0510594 }, "geometry": { "type": "Point", "coordinates": [ 77.0510594, 28.5856606 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Goyla Khurd Village", "Latitude": 28.5856606, "Longitude": 77.0105594 }, "geometry": { "type": "Point", "coordinates": [ 77.0105594, 28.5856606 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " A & B Block Shyam Kunj, Goyala Khurd, 2 - A & E Block Goyla Vihar, Goyla Khurd", "Latitude": 28.5907876, "Longitude": 77.0053459 }, "geometry": { "type": "Point", "coordinates": [ 77.0053459, 28.5907876 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Jhuggi Basti , Goyla Khurd", "Latitude": 26.8176796, "Longitude": 82.7633133 }, "geometry": { "type": "Point", "coordinates": [ 82.7633133, 26.8176796 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Samta Enclave , Goyla Khurd, 2 - Pankaj Garden Jhuggi Basti, Goyla Khurd, 3 - Pankaj Garden Colony, Goyla Khurd", "Latitude": 28.5728229, "Longitude": 77.0311907 }, "geometry": { "type": "Point", "coordinates": [ 77.0311907, 28.5728229 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Jhuggi Basti , Goyla Dairy", "Latitude": 26.8176796, "Longitude": 82.7633133 }, "geometry": { "type": "Point", "coordinates": [ 82.7633133, 26.8176796 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Tajpur Khurd Village", "Latitude": 28.5735011, "Longitude": 77.0118246 }, "geometry": { "type": "Point", "coordinates": [ 77.0118246, 28.5735011 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Qutub Vihar Ph-2 , Goyla Dairy", "Latitude": 28.5809067, "Longitude": 77.0290995 }, "geometry": { "type": "Point", "coordinates": [ 77.0290995, 28.5809067 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Qutub Vihar , Tajpur Khurd Village", "Latitude": 28.5735011, "Longitude": 77.0118246 }, "geometry": { "type": "Point", "coordinates": [ 77.0118246, 28.5735011 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Qutub Vihar Ph - 1, Goyla Dairy, 2 - A - Block, Phase-I , Qutub Vihar Goyla Dairy, 3 - B- Block, Phase-I , Qutub Vihar Goyla Dairy", "Latitude": 28.5797635, "Longitude": 77.0215009 }, "geometry": { "type": "Point", "coordinates": [ 77.0215009, 28.5797635 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C-Block, Phase-I , Qutub Vihar Goyla Dairy", "Latitude": 28.5797635, "Longitude": 77.0215009 }, "geometry": { "type": "Point", "coordinates": [ 77.0215009, 28.5797635 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " D-Block, Phase-I, Qutub Vihar Goyla Dairy, 2 - H Block, Phase-I , Qutub Vihar Goyla Dairy", "Latitude": 28.5797635, "Longitude": 77.0215009 }, "geometry": { "type": "Point", "coordinates": [ 77.0215009, 28.5797635 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E - Block Qutub Vihar, Goyla Dairy", "Latitude": 28.5717512, "Longitude": 77.0245213 }, "geometry": { "type": "Point", "coordinates": [ 77.0245213, 28.5717512 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " E - Block , Qutub Vihar Goyla Dairy", "Latitude": 28.5717512, "Longitude": 77.0245213 }, "geometry": { "type": "Point", "coordinates": [ 77.0245213, 28.5717512 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " F - Block , Qutub Vihar Goyla Dairy, 2 - G Block Qutub Vihar Ph-I, Goyla Dairy", "Latitude": 28.5724764, "Longitude": 77.0522976 }, "geometry": { "type": "Point", "coordinates": [ 77.0522976, 28.5724764 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Jhankar Road, Qutub Vihar Goyla Dairy, 2 - A - Block, Qutab Vihar Goyla Dairy, Ph-2", "Latitude": 28.5797635, "Longitude": 77.0215009 }, "geometry": { "type": "Point", "coordinates": [ 77.0215009, 28.5797635 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " B - Block Part 2 , Qutab Vihar Goyla Dairy, 2 - C Block Ph-2 Qutub Vihar, Goyla Dairy", "Latitude": 28.5809067, "Longitude": 77.0290995 }, "geometry": { "type": "Point", "coordinates": [ 77.0290995, 28.5809067 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " C - Block Part 2, Qutab Vihar Goyla Dairy, 2 - D - Block Part 2, Qutab Vihar Goyla Dairy", "Latitude": 28.5797635, "Longitude": 77.0215009 }, "geometry": { "type": "Point", "coordinates": [ 77.0215009, 28.5797635 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Defence Enclave Part 2, Qutub Vihar Goyla Dairy, 2 - E Block Qutub Vihar , Ph-II, Goyla Dairy", "Latitude": 28.5797635, "Longitude": 77.0215009 }, "geometry": { "type": "Point", "coordinates": [ 77.0215009, 28.5797635 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Amberhai Village", "Latitude": 28.5779921, "Longitude": 77.0486812 }, "geometry": { "type": "Point", "coordinates": [ 77.0486812, 28.5779921 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Amberhai Extn , Pkt -2 , Sector -19 Dwarka, 2 - B Block (DDA Plots) Sector -19, Dwarka, 3 - , Amberhai Village, 4 - A Block Sector -19, Dwarka, 5 - Police Colony Sector -19, Dwarka", "Latitude": 28.5782314, "Longitude": 77.0496102 }, "geometry": { "type": "Point", "coordinates": [ 77.0496102, 28.5782314 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector - 19 , Pocket - 1, Dwarka", "Latitude": 28.5798879, "Longitude": 77.0517103 }, "geometry": { "type": "Point", "coordinates": [ 77.0517103, 28.5798879 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pocket -2 , Sector - 19, Dwarka", "Latitude": 28.5798879, "Longitude": 77.0517103 }, "geometry": { "type": "Point", "coordinates": [ 77.0517103, 28.5798879 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pocket - 3 , Sector - 19 , Dwarka", "Latitude": 28.5860795, "Longitude": 77.0486422 }, "geometry": { "type": "Point", "coordinates": [ 77.0486422, 28.5860795 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Ircon Cghs Ltd Plot-14 Sec-18A, Dwarka, 2 - Pocket - 3 , Sector - 19 , Dwarka, 3 - Block-B, Pocket-3, Sector-17, Dwarka, 4 - Bharat Petroleum C.G.H.S. Ltd., Plot No.-8, Sec-18A, Dwarka Ph-II, 5 - The Satyam Cghs Ltd Plot No-5, Sec-18A, Dwarka, 6 - The New Rashtriya Cghs Ltd Plot No 15, Sec 18 Dwarka", "Latitude": 28.5739695, "Longitude": 77.0552103 }, "geometry": { "type": "Point", "coordinates": [ 77.0552103, 28.5739695 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector-18 B , Dwarka, 2 - DDA Hig Flats Ph-2, Sect-18 , Dwarka, 3 - Pink Aptt Sector-18B DDA Mig Flats , Dwarka", "Latitude": 28.5861044, "Longitude": 77.0299745 }, "geometry": { "type": "Point", "coordinates": [ 77.0299745, 28.5861044 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " R C C Flats, Sector-18B, Phase-II, Dwarka, 2 - Platinium Heights, DDA Hig Ms Flats, Sector -18 B Dwarka, 3 - Atulya Aptt. DDA Ms Hig Flats, Block-A, Sector-18B, Dwarka, 4 - The Peoples ConservatIVe Cghs Ltd., Plot No-10 Sec-18 Dwarka", "Latitude": 28.5871372, "Longitude": 77.0308988 }, "geometry": { "type": "Point", "coordinates": [ 77.0308988, 28.5871372 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector-18 A, Kargil Veer Awas, Dwarka, 2 - Sect-19B , Dwarka, 3 - DDA Flats , Sector 17 E Dwarka, 4 - Sector-18A Plot-2 Cresent Apptt., Dwarka, 5 - Sector 19 A, Dwarka, 6 - Sanskriti Apptt. Sector-19B, Dwarka, 7 - Chitrakoot Dhaam Cghs Plot No-2, Sec-19 Dwarka, 8 - Lords Cghs Ltd Plot No 7 Sector 19B, Dwarka, 9 - Nishat Cghs Ltd Plot No 5 Ph-II, Sector 19B Dwarka", "Latitude": 28.5883077, "Longitude": 77.0403027 }, "geometry": { "type": "Point", "coordinates": [ 77.0403027, 28.5883077 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Veer Awas, Sector 18 A Dwarka, 2 - Rose Apptt., Ph-II, Sector-18B, Dwarka, 3 - Engineers Apptt.Plot No-11, Sector-18A, Dwarka, 4 - Shree Awas Mig-Lig Flats, Sec-18B Dwarka Ph-2, 5 - The Saptarni C.G.H.S. Ltd., Plot No-4, Sector-19B, Dwarka, 6 - Karuna Vihar C.G.H.S. Ltd., Plot No-9, Sector-18A, Dwarka, 7 - Raj Vihar, C.G.H.S. Ltd. Plot No 13 Sec-18A Dwarka, 8 - Janaksar Cghs Ltd Plot No 12, Sector 18 A Dwarka, 9 - Samrat Ashoka Enclave Cghs Ltd., Sector 18 A Dwarka, 10 - The Excellence Apptplot No 4, Ph-II Sec-18A Dwarka", "Latitude": 28.5869673, "Longitude": 77.0398951 }, "geometry": { "type": "Point", "coordinates": [ 77.0398951, 28.5869673 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Keshav Kunj Aptt Sector-17, Pocket-D, DDA Flats Dwarka, 2 - Sarvhit Aptt, DDA Flats, Sector-17, Pocket A Dwarka", "Latitude": 28.5936925, "Longitude": 77.0314926 }, "geometry": { "type": "Point", "coordinates": [ 77.0314926, 28.5936925 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Pochan Pur Village", "Latitude": 28.5629844, "Longitude": 77.0491563 }, "geometry": { "type": "Point", "coordinates": [ 77.0491563, 28.5629844 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Pochan Pur Village", "Latitude": 28.5629844, "Longitude": 77.0491563 }, "geometry": { "type": "Point", "coordinates": [ 77.0491563, 28.5629844 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Major Bhola Ram Colony, Pochan Pur Village", "Latitude": 28.5605941, "Longitude": 77.0550892 }, "geometry": { "type": "Point", "coordinates": [ 77.0550892, 28.5605941 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pochanpur Extn, Pochanpur, 2 - Mbr Colony, Pochan Pur", "Latitude": 28.5609483, "Longitude": 77.0441231 }, "geometry": { "type": "Point", "coordinates": [ 77.0441231, 28.5609483 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector - 22 Pocket - 1, S F S , D D A, Dwarka, 2 - Salariya Officers Enclave Sec 21, Dwarka, 3 - Jai Bhawani Cghs Ltd Plot No-5B Ph-L Sec-22, Dwarka", "Latitude": 28.6001066, "Longitude": 77.0711058 }, "geometry": { "type": "Point", "coordinates": [ 77.0711058, 28.6001066 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector - 23 , Pocket - 1 , D D A Flats , Dwarka", "Latitude": 28.7068369, "Longitude": 77.1222543 }, "geometry": { "type": "Point", "coordinates": [ 77.1222543, 28.7068369 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Bank Vihar Plot -16 , Sector - 22 Dwarka, 2 - D G S Society Plot -6, Sector - 22 Dwarka, 3 - Janki Apptt. Plot -7 , Sector - 22 Dwarka", "Latitude": 28.6927375, "Longitude": 77.1206511 }, "geometry": { "type": "Point", "coordinates": [ 77.1206511, 28.6927375 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Subham Apptt. Plot -13, Sector 22 Dwarka, 2 - I F C I Appartment Plot -4, Sector 23 Dwarka, 3 - Quetta Cghs (Sri Vinayak Apptt.) Plot No-5C, Sector 22 Dwarka, 4 - Himalayan Residency Plot No-10, Sector 22 Dwarka, 5 - Bharat Jagriti C.G.H.S. Ltd., Plot No.-22, Sec-12, Dwarka, 6 - Chitrakoot Apptt. C.G.H.S. Ltd., Plot No.-9, Sec-22, Dwarka Ph-I, 7 - Udyog Vihar Cghs Ltd, Plot No-12 Sec-22 Dwarka, 8 - Mahavir Cghs Ltd, Plot No-5A, Sec-22 Dwarka, 9 - The Veena Cghs Ltd, Plot No 5D, Sector - 22 Dwarka", "Latitude": 28.5593946, "Longitude": 77.0618676 }, "geometry": { "type": "Point", "coordinates": [ 77.0618676, 28.5593946 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Green Tower Apptt. Plot -7 C , Sector -23 Dwarka, 2 - Nav Sansad Vihar Apptt. Plot -4, Sector - 22 Dwarka, 3 - Sadh Bhawna Apt Him Hit Cghs Plot -8 , Sector - 22 Dwarka", "Latitude": 28.5587542, "Longitude": 77.0613034 }, "geometry": { "type": "Point", "coordinates": [ 77.0613034, 28.5587542 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Classic Apptt. Plot -11, Sector - 22 Dwarka, 2 - Keshav Kunj Plot No-15A Sector-22 , Dwarka, 3 - Plot No-7B Sector -23 , Manisha C G H S Dwarka, 4 - Delhi Apptt. Plot No-15C, Sector - 22 Dwarka, 5 - Maharani Avanti Bai Cghs Ltd, Plot No 15B Sec-22 Dwarka, 6 - Beverly Park, Plot No. 2, Sector-22 Dwarka, 7 - Tha Vasudhara Cghs Ltd Plot No-1B, Sector - 22 Dwarka, 8 - Guru Ram Dass C.G.H.S Ltd, Plot No-3-B, Sec-22 Dwarka, 9 - Naval Technical Officer Appt.Plot No 3A, Sector - 22 Dwarka, 10 - Ranjit Vihar-1 Plot No 15, Sector - 22 Dwarka", "Latitude": 28.5573431, "Longitude": 77.0541077 }, "geometry": { "type": "Point", "coordinates": [ 77.0541077, 28.5573431 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Harmony Apptt Sector - 23 , Dwarka, 2 - Sector - 23 , New Kanchan Junga Apptt., Dwarka, 3 - Sector - 23 , Saman Vihar Apptt. Plot No 9 , Dwarka, 4 - Sector - 23 , Parbhat Apptt. , Dwarka, 5 - Plot No-3 Sector 23 , Philips Apptt Dwarka, 6 - Plot No-10 Sector-23 , Shital Vihar Apptt Dwarka, 7 - Navrattan Appt Plot-7A , Sector - 23 , Dwarka, 8 - Ramkrishan C.G.H.S. Ltd., Plot No.-12, Sec-23, Dwarka Ph-I, 9 - Prabha C.G.H.S. Ltd., Plot No.-11, Sec-23, Dwarka, 10 - Vishwas Apptt. Plot No.-6A, Sec-23, Dwarka, 1 The Mahajan Shree C.G.H.S. Ltd. Plot No-13, Sector-23, Ph-I, Dwarka", "Latitude": 28.5594904, "Longitude": 77.0541782 }, "geometry": { "type": "Point", "coordinates": [ 77.0541782, 28.5594904 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " New Millenium Appt , Plot No-2, Sector - 23 , Dwarka, 2 - Jagaran Appt , Sector - 22, Dwarka, 3 - Sector -23 , Plot -5 , Indian Airlines, Dwarka, 4 - Dream Apptt. , Plot No-14, Sec-22. , Dwarka", "Latitude": 28.5641034, "Longitude": 77.0504022 }, "geometry": { "type": "Point", "coordinates": [ 77.0504022, 28.5641034 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Sector -23 , Police Station, Dwarka, 2 - I F C I Appartment Plot -4 , Sector -23 Dwarka, 3 - Green Vally Apptt. Plot -18 Sector 22, Dwarika, 4 - Ranjeet Vihar-II Plot No-16 Sec-23 Ph-I, Dwarka", "Latitude": 28.5991332, "Longitude": 77.0659398 }, "geometry": { "type": "Point", "coordinates": [ 77.0659398, 28.5991332 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pachhaya Mohalla, Chhawla Village, 2 - Sadh Mohalla, Chhawla Village", "Latitude": 21.9958469, "Longitude": 76.1059004 }, "geometry": { "type": "Point", "coordinates": [ 76.1059004, 21.9958469 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kuraat Mohalla, Shamshan Ghat Road, Chhawla Village, 2 - Sumesh Vihar, East , Chhawla Village, 3 - Family Qtrs Bsf Camp , Chhawla Village", "Latitude": 28.6758007, "Longitude": 77.0716883 }, "geometry": { "type": "Point", "coordinates": [ 77.0716883, 28.6758007 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pachhays Mohhala Balbir. Singh Wali Gali , Chhawla Village", "Latitude": 28.5623109, "Longitude": 77.0023039 }, "geometry": { "type": "Point", "coordinates": [ 77.0023039, 28.5623109 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Chhawla Village", "Latitude": 28.5632109, "Longitude": 77.0023039 }, "geometry": { "type": "Point", "coordinates": [ 77.0023039, 28.5632109 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Gautam Colony , Chhawla Extn Kangan Heri, 2 - Trishul Colony Chhawla Extn., Chhawla Village, 3 - Rishal Vihar, Kanganheri Road, Chhawla", "Latitude": 28.5539238, "Longitude": 76.9931701 }, "geometry": { "type": "Point", "coordinates": [ 76.9931701, 28.5539238 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kuraat Mohalla, North , Chhawla Village, 2 - Kaba Mohalla ( Gali Harijan Basti ) , Chhawla Village, 3 - Paharwa Colony, Chhawla Village, 4 - Kaba Mohalla, Chhawla Village", "Latitude": 28.5629139, "Longitude": 77.0040774 }, "geometry": { "type": "Point", "coordinates": [ 77.0040774, 28.5629139 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pachhaya Mohalla, Chhawla Village, 2 - Parwa Colony Near Ggss School, Chhawla Village, 3 - Reehal Enclave Tajpur Road, Chhawla Village", "Latitude": 21.9935869, "Longitude": 76.1059004 }, "geometry": { "type": "Point", "coordinates": [ 76.1059004, 21.9935869 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kuraat ( Pachhiya Mohalla ), Chhawla Village, 2 - Kuraat Mohalla, Chakki Wali Gali, Chhawala Village", "Latitude": 28.5630243, "Longitude": 77.0035462 }, "geometry": { "type": "Point", "coordinates": [ 77.0035462, 28.5630243 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Pachhiya Mohalla ( Gali Harijan Basti) , Chhawla Village, 2 - Kuraat Mohalla , Chhawla Village, 3 - Somesh Vihar, West, Chhawala Village", "Latitude": 28.5630243, "Longitude": 77.0035462 }, "geometry": { "type": "Point", "coordinates": [ 77.0035462, 28.5630243 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Kangan Hari Village, Kangan Hari Village, 2 - Gali Namber Daar Raghubir, Kangan Hari, 3 - Pardhan Wali Gali, Kangan Heri, 4 - Primary School Road, Kangan Heri, 5 - Hira Singh Road, Kangan Heri, 6 - , Kangan Hari Village", "Latitude": 28.5461863, "Longitude": 76.9901874 }, "geometry": { "type": "Point", "coordinates": [ 76.9901874, 28.5461863 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Chakki Wali Gali, Kangan Heri, 2 - Kude Singh Nambardaar Gali, Kangan Heri, 3 - Harijan Basti , Kangan Heri", "Latitude": 28.5461863, "Longitude": 76.9901874 }, "geometry": { "type": "Point", "coordinates": [ 76.9901874, 28.5461863 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Balmiki Mohalla, Kangan Heri, 2 - Kashyap Mohalla , Kangan Heri, 3 - Bhindu Mohalla, Kangan Heri, 4 - Jagdish Namberdar Gali , Kangan Heri", "Latitude": 28.5461863, "Longitude": 76.9901874 }, "geometry": { "type": "Point", "coordinates": [ 76.9901874, 28.5461863 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Main Chhopal Wali Gali, Kangan Heri, 2 - Brahaman Mohalla, Kangan Heri, 3 - Kashyap Colony, Kangan Heri, 4 - Mata Wali Gali , Kangan Heri", "Latitude": 28.5461863, "Longitude": 76.9901874 }, "geometry": { "type": "Point", "coordinates": [ 76.9901874, 28.5461863 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Mandir Wali Gali, Nanak Heri Village, 2 - Badu Sarai Village, 3 - Harijan Basti, Nanak Heri Village, 4 - Ragho Pur Village, Nanak Heri, 5 - Nanak Heri, Village", "Latitude": 28.5194321, "Longitude": 76.9850438 }, "geometry": { "type": "Point", "coordinates": [ 76.9850438, 28.5194321 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Jaat Mohalla , Badusarai Village, 2 - Pandit Mohalla , Badusarai Village, 3 - Balmiki Mohalla , Badusarai Village, 4 - Harijan Mohalla, Badusarai Village, 5 - Jogi Mohalla , Badusarai Village, 6 - Jhimar Mohalla , Badusarai Village, 7 - Badusarai, Village", "Latitude": 28.5295945, "Longitude": 76.9864681 }, "geometry": { "type": "Point", "coordinates": [ 76.9864681, 28.5295945 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Badi Patti , Paprawat Village, 2 - Chhoti Patti , Paprawat Village, 3 - Paprawat, Village", "Latitude": 28.5900703, "Longitude": 76.9780504 }, "geometry": { "type": "Point", "coordinates": [ 76.9780504, 28.5900703 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Chhoti Patti , Paprawat Village, 2 - Beech Wali Patti , Paprawat Village, 3 - Badi Patti, Paprawat Village", "Latitude": 28.5900703, "Longitude": 76.9780504 }, "geometry": { "type": "Point", "coordinates": [ 76.9780504, 28.5900703 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Badi Patti , Paprawat Village, 2 - Beech Wali Patti, Paprawat Village, 3 - Chhoti Patti, Paprawat Village, 4 - Pipe Factory, Paprawat Village", "Latitude": 28.5900703, "Longitude": 76.9780504 }, "geometry": { "type": "Point", "coordinates": [ 76.9780504, 28.5900703 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Rewla Khanpur Village", "Latitude": 28.5647261, "Longitude": 76.9861441 }, "geometry": { "type": "Point", "coordinates": [ 76.9861441, 28.5647261 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Prem Nagar , Rewla Khanpur Village, 2 - Rewla Khanpur Village", "Latitude": 28.5647261, "Longitude": 76.9851441 }, "geometry": { "type": "Point", "coordinates": [ 76.9851441, 28.5647261 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Pandwala Kalan Village", "Latitude": 28.5647617, "Longitude": 76.9513432 }, "geometry": { "type": "Point", "coordinates": [ 76.9513432, 28.5647617 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Pandwala Kalan Village", "Latitude": 28.5647617, "Longitude": 76.9513432 }, "geometry": { "type": "Point", "coordinates": [ 76.9513432, 28.5647617 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Hans Nagar Colony, Pandwala Kalan Village, 2 - Pandwala Kalan Village", "Latitude": 28.5647617, "Longitude": 76.9513432 }, "geometry": { "type": "Point", "coordinates": [ 76.9513432, 28.5647617 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Pandwala Khurd Village", "Latitude": 28.5621241, "Longitude": 76.9675453 }, "geometry": { "type": "Point", "coordinates": [ 76.9675453, 28.5621241 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Khar Khari Roundh", "Latitude": 28.5636396, "Longitude": 76.9398195 }, "geometry": { "type": "Point", "coordinates": [ 76.9398195, 28.5636396 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Northern Village , Kharkhari Jatmal Village, 2 - Namberdar Mohalla, Village Kharkhari Jatmal, 3 - Southern Village, Village Khar Khari Jatmal, 4 - Central Village, Khar Khari Jatmal, 5 - Kharkhari Jatmal, Village", "Latitude": 28.5795662, "Longitude": 76.9447908 }, "geometry": { "type": "Point", "coordinates": [ 76.9447908, 28.5795662 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Chaupal Mohalla, Khar Khari Nahar Village, 2 - Gandhi Mohalla , Khar Khari Nahar Village, 3 - Mata Wali Gali, Khar Khari Nahar Village, 4 - New Basti, Khar Khari Nahar Village, 5 - Khar Khari Nahar, Village", "Latitude": 30.9478979, "Longitude": 77.5901243 }, "geometry": { "type": "Point", "coordinates": [ 77.5901243, 30.9478979 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Nambardar Mohalla, Hasanpur Village, 2 - Jay Narayan Pradhan Mohalla, Hasanpur Villae, 3 - Rao Ji Mohalla , Hasan Pur Village, 4 - Harijan Basti, Hasanpur Village, 5 - , Hasanpur Villae", "Latitude": 28.7237807, "Longitude": 78.2846303 }, "geometry": { "type": "Point", "coordinates": [ 78.2846303, 28.7237807 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Daulat Pur Village", "Latitude": 31.7747487, "Longitude": 75.9985446 }, "geometry": { "type": "Point", "coordinates": [ 75.9985446, 31.7747487 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Tyagi Mohalla , Jhatikra Village, 2 - Harijan Mohalla , Jhatikra Village, 3 - Jhatikra, Village", "Latitude": 28.4987304, "Longitude": 77.1820094 }, "geometry": { "type": "Point", "coordinates": [ 77.1820094, 28.4987304 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Tyagi Pandit Mohalla, Jhatikara Village, 2 - Balmiki Mohalla , Jhatikra Village, 3 - Sarohiya Mohalla, Jhatikara Village", "Latitude": 28.5215412, "Longitude": 76.9565227 }, "geometry": { "type": "Point", "coordinates": [ 76.9565227, 28.5215412 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Chogania Mohalla , Shikarpur Village, 2 - Lodia Mohalla, Shikarpur Village, 3 - Badiyan Mohalla , Shikarpur Village", "Latitude": 28.5288876, "Longitude": 76.9654584 }, "geometry": { "type": "Point", "coordinates": [ 76.9654584, 28.5288876 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Godiya Mohalla , Shikarpur Village, 2 - Harijan Mohalla , Shikar Pur Village, 3 - Shikarpur, Village", "Latitude": 21.4624491, "Longitude": 80.2209773 }, "geometry": { "type": "Point", "coordinates": [ 80.2209773, 21.4624491 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Dafe Mohalla , Shikarpur Village, 2 - Balmiki Mohalla, Shikar Pur Village, 3 - , Asalatpur Khawad Village", "Latitude": 27.9570397, "Longitude": 68.6376993 }, "geometry": { "type": "Point", "coordinates": [ 68.6376993, 27.9570397 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Ghuman Hera Village", "Latitude": 28.5319993, "Longitude": 76.9239727 }, "geometry": { "type": "Point", "coordinates": [ 76.9239727, 28.5319993 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Ghuman Hera Village", "Latitude": 28.5319993, "Longitude": 76.9239727 }, "geometry": { "type": "Point", "coordinates": [ 76.9239727, 28.5319993 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Holi Chowk , Ghuman Hera", "Latitude": 28.5319993, "Longitude": 76.9239727 }, "geometry": { "type": "Point", "coordinates": [ 76.9239727, 28.5319993 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Holi Chowk , Ghuman Hera", "Latitude": 28.5319993, "Longitude": 76.9239727 }, "geometry": { "type": "Point", "coordinates": [ 76.9239727, 28.5319993 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Daurala Village, 2 - Rawta Village", "Latitude": 29.1130045, "Longitude": 77.7062282 }, "geometry": { "type": "Point", "coordinates": [ 77.7062282, 29.1130045 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Rawta Village", "Latitude": 28.5237806, "Longitude": 76.9022654 }, "geometry": { "type": "Point", "coordinates": [ 76.9022654, 28.5237806 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Galib Pur Village", "Latitude": 26.0196001, "Longitude": 83.4119845 }, "geometry": { "type": "Point", "coordinates": [ 83.4119845, 26.0196001 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Sarang Pur Village", "Latitude": 23.5664503, "Longitude": 76.4572256 }, "geometry": { "type": "Point", "coordinates": [ 76.4572256, 23.5664503 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Jhul Jhuli Village", "Latitude": 28.5386306, "Longitude": 76.9038011 }, "geometry": { "type": "Point", "coordinates": [ 76.9038011, 28.5386306 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Dariya Pur Khurd Village", "Latitude": 28.5525022, "Longitude": 76.9107267 }, "geometry": { "type": "Point", "coordinates": [ 76.9107267, 28.5525022 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": "Dariya Pur Khurd Village", "Latitude": 28.5525022, "Longitude": 76.9107267 }, "geometry": { "type": "Point", "coordinates": [ 76.9107267, 28.5525022 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Saadh Mohalla , Khera Dabar Village, 2 - Vishkrma Gali, Khera Dabar Village, 3 - Khera Dabar, Village", "Latitude": 28.5837995, "Longitude": 76.9369063 }, "geometry": { "type": "Point", "coordinates": [ 76.9369063, 28.5837995 ] } },
+{ "type": "Feature", "properties": { "Polling_Booth_Address": " Aath Ghara Mohalla, Village Khera Dabur, 2 - Harijan, Choupal Gali, Khera Dabur Village", "Latitude": 28.5837995, "Longitude": 76.9369063 }, "geometry": { "type": "Point", "coordinates": [ 76.9369063, 28.5837995 ] } }
+]
+}
+
+
+
+
+
+
+    
+
+
+
+
+ 
+
+    L.geoJSON(geojson, {
+    	style: function(feature) {
+    		return{
+    			color:'#000'
+
+    		}
+    		// body...
+    	},
+    	
+    	pointToLayer: function(geoJsonPoint, latlng) 
+    	{
+    return L.marker(latlng,{icon:greenIcon}
+
+
+
+
+
+    	);
+        },
+
+        
+        onEachFeature: function(feature,layer) 
+        {
+        	layer.bindPopup('</h1><p>Pooling Booth Name: '+feature.properties.Polling_Booth_Address+'</p>');
+
+        	
+
+
+
+        }, 
+
+        //layer.on('mouseover', function(e) { e.target.setIcon(greenIcon); });
+        //layer.on('mouseout', function(e) { e.target.setIcon(blackIcon); });
+
+
+
+    }).addTo(mymap);
+
+    mymap.on('mousemove',function(e){console.log(e);})
+
+	var popup = L.popup();
+
+    mymap.addControl(new L.Control.Fullscreen());
+
+    mymap.setMaxBounds(map.getBounds());
+
+//function onMapClick(e) {
+//		popup
+//			.setLatLng(e.latlng)
+//			.setContent("You clicked the map at " + e.latlng.toString())
+//			.openOn(mymap);
+//	}
+
+//	mymap.on('click', onMapClick);	
+
+</script>
+
+
+
+</body>
+</html>
